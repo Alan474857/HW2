@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
+.w3-bar-block .w3-bar-item {padding:20px}
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 20%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+#myImg {
+  border-radius: 5px;
+  cursor: pointer !important;
+  transition: 0.3s;
+}
+
+#myImg:hover {
+  opacity: 0.7;
+  cursor: pointer !important;
+}
+
+#myImg2 {
+  border-radius: 5px;
+  cursor: pointer !important;
+  transition: 0.3s;
+}
+
+#myImg2:hover {
+  opacity: 0.7;
+  cursor: pointer !important;
+}
+
+#myImg3 {
+  border-radius: 5px;
+  cursor: pointer !important;
+  transition: 0.3s;
+}
+
+#myImg3:hover {
+  opacity: 0.7;
+  cursor: pointer !important;
+}
+
+#myImg4 {
+  border-radius: 5px;
+  cursor: pointer !important;
+  transition: 0.3s;
+}
+
+#myImg4:hover {
+  opacity: 0.7;
+  cursor: pointer !important;
+}
+
+#myImg5 {
+  border-radius: 5px;
+  cursor: pointer !important;
+  transition: 0.3s;
+}
+
+#myImg5:hover {
+  opacity: 0.7;
+  cursor: pointer !important;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block ;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer !important;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+
+</style>
+<body>
+
+<!-- Sidebar (hidden by default) -->
+<nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left" style="display:none;z-index:2;width:40%;min-width:300px" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()"
+  class="w3-bar-item w3-button">Close Menu</a>
+  <a href="#food" onclick="w3_close()" class="w3-bar-item w3-button">Food</a>
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">About</a>
+</nav>
+
+<!-- Top menu -->
+  <div class="w3-white w3-xxlarge" style="max-width:1200px;margin:auto">
+    <div class="w3-center w3-padding-16">Visual Story Telling</div>
+  </div>
+
+<hr id="about">
+  <!-- About Section -->
+  <div class="w3-container w3-padding w3-center">  
+      <div class="w3-padding">
+        <h3><b>About this task</b></h3>
+        <h4>Please look a the 5 pictures below and write a short story according to the photo sequence.</h4>
+        <h4>The Story should be around 80 words. Supposedly 1~2 sentence for each picture!</h4>
+      </div>
+  </div>
+  
+<!-- !PAGE CONTENT! -->
+<div class="w3-main w3-content w3-padding" style="max-width:1500px;margin-top:100px">
+
+  <!-- First Photo Grid-->
+  <!-- <div class="w3-row-padding w3-padding-16 w3-center" id="food">
+    <div class="w3-quarter">
+      <img src="pp1.jpg" alt="Sandwich" width="275" height="275">
+      <h3>Picture 1</h3>
+    </div>
+    <div class="w3-quarter">
+      <img src="pp2.jpg" alt="Steak" width="275" height="275">
+      <h3>Picture 2</h3>
+    </div>
+    <div class="w3-quarter">
+      <img src="pp3.jpg" alt="Cherries" width="275" height="275">
+      <h3>Picture 3</h3>
+    </div>
+    <div class="w3-quarter">
+      <img src="pp4.jpg" alt="Pasta and Wine" width="275" height="275">
+      <h3>Picture 4</h3>
+    </div>
+  </div> -->
+  
+ <!-- First Photo Grid-->
+  <!-- <div class="w3-row-padding w3-padding-16 w3-center" id="food"> -->
+    <!-- <div class="w3-quarter"> -->
+      <!-- <img src="pp5.jpg" alt="Sandwich" width="275" height="275"> -->
+      <!-- <h3>Picture 5</h3> -->
+    <!-- </div> -->
+  <!-- </div> -->
+
+<div class="w3-row-padding">
+   <div class="w3-col s1 w3-center">&nbsp;</div>
+
+  <div class="w3-col s2 w3-center">
+    <img id="myImg" src="pp1.jpg" alt="Picture 1" style="width:100%">
+    <h3>Picture 1</h3>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="img01">
+      <!-- <div id="caption"></div> -->
+    </div>
+  </div>
+
+  <div class="w3-col s2 w3-center">
+    <img id="myImg2" src="pp2.jpg" alt="Picture 2" style="width:100%">
+    <h3>Picture 2</h3>
+    <!-- The Modal -->
+    <div id="myModal2" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="img02">
+      <div id="caption2"></div>
+    </div>
+  </div>
+  
+  <div class="w3-col s2 w3-center">
+    <img id="myImg3" src="pp3.jpg" alt="Picture 3" style="width:100%">
+    <h3>Picture 3</h3>
+    <div id="myModal3" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="img03">
+      <div id="caption3"></div>
+    </div>
+  </div>
+  
+  <div class="w3-col s2 w3-center">
+    <img id="myImg4" src="pp4.jpg" alt="Picture 4" style="width:100%">
+    <h3>Picture 4</h3>
+    <div id="myModal4" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="img04">
+      <div id="caption4"></div>
+    </div>
+  </div>
+  
+  <div class="w3-col s2 w3-center">
+    <img id="myImg5" src="pp5.jpg" alt="Picture 5" style="width:100%">
+    <h3>Picture 5</h3>
+    <div id="myModal5" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="img05">
+      <div id="caption5"></div>
+    </div>
+  </div>
+
+  <div class="w3-col s1 w3-center">&nbsp;</div>
+</div>
+
+
+<hr>
+  <div class="w3-container w3-padding-small w3-center">  
+      <div class="w3-padding-small">
+        <h3><b>Type your story in the box below</b></h3>
+        <h4>Please try your best to fill up the whole box</h4>
+      </div>
+  </div>
+
+<div align = "center">
+<textarea rows="5" cols="80" style="font-size: 15pt">
+At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies. 
+</textarea>
+</div>
+
+<div align = "center" style="font-size: 18pt">
+<button type="button">Submit</button>
+</div>  
+
+<script>
+// Script to open and close sidebar
+
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+
+// Get the modal
+var modal = document.getElementById('myModal');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg');
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+
+var modal2 = document.getElementById('myModal2');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img2 = document.getElementById('myImg2');
+var modalImg2 = document.getElementById("img02");
+var captionText2 = document.getElementById("caption2");
+img2.onclick = function(){
+  modal2.style.display = "block";
+  modalImg2.src = this.src;
+  captionText2.innerHTML = this.alt;
+}
+
+var modal3 = document.getElementById('myModal3');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img3 = document.getElementById('myImg3');
+var modalImg3 = document.getElementById("img03");
+var captionText3 = document.getElementById("caption3");
+img3.onclick = function(){
+  modal3.style.display = "block";
+  modalImg3.src = this.src;
+  captionText3.innerHTML = this.alt;
+}
+
+var modal4 = document.getElementById('myModal4');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img4 = document.getElementById('myImg4');
+var modalImg4 = document.getElementById("img04");
+var captionText4 = document.getElementById("caption4");
+img4.onclick = function(){
+  modal4.style.display = "block";
+  modalImg4.src = this.src;
+  captionText4.innerHTML = this.alt;
+}
+
+var modal5 = document.getElementById('myModal5');
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img5 = document.getElementById('myImg5');
+var modalImg5 = document.getElementById("img05");
+var captionText5 = document.getElementById("caption5");
+img5.onclick = function(){
+  modal5.style.display = "block";
+  modalImg5.src = this.src;
+  captionText5.innerHTML = this.alt;
+}
+// for(i=0;i< img.length;i++)
+//    {    
+//     img[i].onclick = function(){
+
+//     modal.style.display = "block";
+//        modalImg.src = this.src;
+
+//  }
+// }
+
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close");
+
+// When the user clicks on <span> (x), close the modal
+for(var i=0; i<span.length; i++)
+{
+  span[i].onclick = function() { 
+  modal.style.display = "none";
+  modal2.style.display = "none";
+  modal3.style.display = "none";
+  modal4.style.display = "none";
+  modal5.style.display = "none";
+  }
+}
+
+</script>
+
+</body>
+</html>
+
