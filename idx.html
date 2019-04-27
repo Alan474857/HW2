@@ -160,7 +160,6 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 
 </style>
 <body>
-
 <!-- Sidebar (hidden by default) -->
 <nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left" style="display:none;z-index:2;width:40%;min-width:300px" id="mySidebar">
   <a href="javascript:void(0)" onclick="w3_close()"
@@ -288,8 +287,52 @@ At w3schools.com you will learn how to make a website. We offer free tutorials i
 </textarea>
 </div>
 
+<form id="mturk_form" name="mturk_form">
+      <input id="mturk-assignmentId" name="assignmentId" type="hidden">
+<input id="submitted-from" name="submitted-from" type="hidden" value="crowd-page">
+      <input id="form-session-id" name="form-session-id" type="hidden">
+</form>
+<form id="mturk_form" name="mturk_form">
+      <input id="mturk-assignmentId" name="assignmentId" type="hidden">
+<input id="submitted-from" name="submitted-from" type="hidden" value="crowd-page">
+      <input id="form-session-id" name="form-session-id" type="hidden">
+</form>
+
+<script>
+function submitToTurk(){
+  
+  if(gup("assignmentId")!="") {
+
+        var jobkey = gup("assignmentId");
+        if(gup("hitId")!="") {
+          jobkey += "|" + gup("hitId");
+        }
+
+        if(gup("assignmentId") == "ASSIGNMENT_ID_NOT_AVAILABLE") {
+          $('input').attr("DISABLED", "true");
+          _allowSubmit = false;
+        } else {
+          _allowSubmit = true;
+        }
+        $('#mturk-assignmentId').attr('value', gup("assignmentId"));
+        $("#mturk_form").attr('method', 'POST');
+    
+        if(gup("turkSubmitTo")!="") {
+            $("#mturk_form").attr('action', gup("turkSubmitTo") + '/mturk/externalSubmit');
+        }
+
+    }
+  
+  $("#mturk_form").submit();
+  
+/*For some reasons you need this*/
+return false;
+  
+}
+</script>
+
 <div align = "center" style="font-size: 18pt">
-<button type="button">Submit</button>
+<button type="button" onclick="submitToTurk()">Submit</button>
 </div>  
 
 <script>
