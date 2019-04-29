@@ -189,6 +189,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
         <h3><b>About this task</b></h3>
         <h4>Please look a the 5 pictures below and write a short story according to the photo sequence.</h4>
         <h4>The Story should be around 80 words. Supposedly 1~2 sentence for each picture!</h4>
+        <h4>Please do not copy andf paste, thanks!</h4>
       </div>
   </div>
   
@@ -308,6 +309,17 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 </form>
 
 <script>
+function gup(name) {
+    name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+    var regexS = "[\\?&]"+name+"=([^&#]*)";
+    var regex = new RegExp(regexS);
+    var results = regex.exec(window.location.href);
+    if(results == null)
+      return "";
+    else
+      return unescape(results[1]);
+}
+ 
 function submitToTurk(){
   
   if(gup("assignmentId")!="") {
