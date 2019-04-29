@@ -80,6 +80,10 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
   cursor: pointer !important;
 }
 
+#submit:hover {
+  cursor: pointer !important;
+}
+
 /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
@@ -159,6 +163,11 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 }
 
 </style>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
 <body>
 <!-- Sidebar (hidden by default) -->
 <nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left" style="display:none;z-index:2;width:40%;min-width:300px" id="mySidebar">
@@ -281,16 +290,21 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
       </div>
   </div>
 
-<div align = "center">
-<textarea rows="5" cols="80" style="font-size: 15pt">
-At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies. 
-</textarea>
-</div>
-
 <form id="mturk_form" name="mturk_form">
       <input id="mturk-assignmentId" name="assignmentId" type="hidden">
-<input id="submitted-from" name="submitted-from" type="hidden" value="crowd-page">
+      <input id="submitted-from" name="submitted-from" type="hidden" value="crowd-page">
       <input id="form-session-id" name="form-session-id" type="hidden">
+      
+      <div align = "center">
+        <textarea rows="5" cols="80" style="font-size: 15pt">
+        At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies. 
+        </textarea>
+      </div>
+
+
+      <div align = "center" style="font-size: 18pt">
+        <input type="submit" id="submit" onclick="submitToTurk()">
+      </div>  
 </form>
 
 <script>
@@ -324,13 +338,6 @@ function submitToTurk(){
 return false;
   
 }
-</script>
-
-<div align = "center" style="font-size: 18pt">
-<button type="button" cursor:pointer onclick="submitToTurk()">Submit</button>
-</div>  
-
-<script>
 // Script to open and close sidebar
 
 function w3_open() {
